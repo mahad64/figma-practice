@@ -1,169 +1,50 @@
-# YAML <a href="https://www.npmjs.com/package/yaml"><img align="right" src="https://badge.fury.io/js/yaml.svg" title="npm package" /></a>
 
-`yaml` is a definitive library for [YAML](https://yaml.org/), the human friendly data serialization standard.
-This library:
+# TypeScript
 
-- Supports both YAML 1.1 and YAML 1.2 and all common data schemas,
-- Passes all of the [yaml-test-suite](https://github.com/yaml/yaml-test-suite) tests,
-- Can accept any string as input without throwing, parsing as much YAML out of it as it can, and
-- Supports parsing, modifying, and writing YAML comments and blank lines.
+[![GitHub Actions CI](https://github.com/microsoft/TypeScript/workflows/CI/badge.svg)](https://github.com/microsoft/TypeScript/actions?query=workflow%3ACI)
+[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
+[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
 
-The library is released under the ISC open source license, and the code is [available on GitHub](https://github.com/eemeli/yaml/).
-It has no external dependencies and runs on Node.js as well as modern browsers.
 
-For the purposes of versioning, any changes that break any of the documented endpoints or APIs will be considered semver-major breaking changes.
-Undocumented library internals may change between minor versions, and previous APIs may be deprecated (but not removed).
+[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
 
-The minimum supported TypeScript version of the included typings is 3.9;
-for use in earlier versions you may need to set `skipLibCheck: true` in your config.
-This requirement may be updated between minor versions of the library.
+Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
 
-For more information, see the project's documentation site: [**eemeli.org/yaml**](https://eemeli.org/yaml/)
+## Installing
 
-To install:
+For the latest stable version:
 
-```sh
-npm install yaml
+```bash
+npm install -D typescript
 ```
 
-**Note:** These docs are for `yaml@2`. For v1, see the [v1.10.0 tag](https://github.com/eemeli/yaml/tree/v1.10.0) for the source and [eemeli.org/yaml/v1](https://eemeli.org/yaml/v1/) for the documentation.
+For our nightly builds:
 
-The development and maintenance of this library is [sponsored](https://github.com/sponsors/eemeli) by:
-
-<p align="center" width="100%">
-  <a href="https://www.scipress.io/"
-    ><img
-      width="150"
-      align="top"
-      src="https://eemeli.org/yaml/images/scipress.svg"
-      alt="Scipress"
-  /></a>
-  &nbsp; &nbsp;
-  <a href="https://manifest.build/"
-    ><img
-      width="150"
-      align="top"
-      src="https://eemeli.org/yaml/images/manifest.svg"
-      alt="Manifest"
-  /></a>
-</p>
-
-## API Overview
-
-The API provided by `yaml` has three layers, depending on how deep you need to go: [Parse & Stringify](https://eemeli.org/yaml/#parse-amp-stringify), [Documents](https://eemeli.org/yaml/#documents), and the underlying [Lexer/Parser/Composer](https://eemeli.org/yaml/#parsing-yaml).
-The first has the simplest API and "just works", the second gets you all the bells and whistles supported by the library along with a decent [AST](https://eemeli.org/yaml/#content-nodes), and the third lets you get progressively closer to YAML source, if that's your thing.
-
-A [command-line tool](https://eemeli.org/yaml/#command-line-tool) is also included.
-
-```js
-import { parse, stringify } from 'yaml'
-// or
-import YAML from 'yaml'
-// or
-const YAML = require('yaml')
+```bash
+npm install -D typescript@next
 ```
 
-### Parse & Stringify
+## Contribute
 
-- [`parse(str, reviver?, options?): value`](https://eemeli.org/yaml/#yaml-parse)
-- [`stringify(value, replacer?, options?): string`](https://eemeli.org/yaml/#yaml-stringify)
+There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
+* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
+* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
+* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
+* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
+* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
+* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
 
-### Documents
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
+the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
+with any additional questions or comments.
 
-- [`Document`](https://eemeli.org/yaml/#documents)
-  - [`constructor(value, replacer?, options?)`](https://eemeli.org/yaml/#creating-documents)
-  - [`#anchors`](https://eemeli.org/yaml/#working-with-anchors)
-  - [`#contents`](https://eemeli.org/yaml/#content-nodes)
-  - [`#directives`](https://eemeli.org/yaml/#stream-directives)
-  - [`#errors`](https://eemeli.org/yaml/#errors)
-  - [`#warnings`](https://eemeli.org/yaml/#errors)
-- [`isDocument(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`parseAllDocuments(str, options?): Document[]`](https://eemeli.org/yaml/#parsing-documents)
-- [`parseDocument(str, options?): Document`](https://eemeli.org/yaml/#parsing-documents)
+## Documentation
 
-### Content Nodes
+*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+*  [Homepage](https://www.typescriptlang.org/)
 
-- [`isAlias(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isCollection(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isMap(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isNode(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isPair(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isScalar(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isSeq(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`new Scalar(value)`](https://eemeli.org/yaml/#scalar-values)
-- [`new YAMLMap()`](https://eemeli.org/yaml/#collections)
-- [`new YAMLSeq()`](https://eemeli.org/yaml/#collections)
-- [`doc.createAlias(node, name?): Alias`](https://eemeli.org/yaml/#working-with-anchors)
-- [`doc.createNode(value, options?): Node`](https://eemeli.org/yaml/#creating-nodes)
-- [`doc.createPair(key, value): Pair`](https://eemeli.org/yaml/#creating-nodes)
-- [`visit(node, visitor)`](https://eemeli.org/yaml/#finding-and-modifying-nodes)
+## Roadmap
 
-### Parsing YAML
-
-- [`new Lexer().lex(src)`](https://eemeli.org/yaml/#lexer)
-- [`new Parser(onNewLine?).parse(src)`](https://eemeli.org/yaml/#parser)
-- [`new Composer(options?).compose(tokens)`](https://eemeli.org/yaml/#composer)
-
-## YAML.parse
-
-```yaml
-# file.yml
-YAML:
-  - A human-readable data serialization language
-  - https://en.wikipedia.org/wiki/YAML
-yaml:
-  - A complete JavaScript implementation
-  - https://www.npmjs.com/package/yaml
-```
-
-```js
-import fs from 'fs'
-import YAML from 'yaml'
-
-YAML.parse('3.14159')
-// 3.14159
-
-YAML.parse('[ true, false, maybe, null ]\n')
-// [ true, false, 'maybe', null ]
-
-const file = fs.readFileSync('./file.yml', 'utf8')
-YAML.parse(file)
-// { YAML:
-//   [ 'A human-readable data serialization language',
-//     'https://en.wikipedia.org/wiki/YAML' ],
-//   yaml:
-//   [ 'A complete JavaScript implementation',
-//     'https://www.npmjs.com/package/yaml' ] }
-```
-
-## YAML.stringify
-
-```js
-import YAML from 'yaml'
-
-YAML.stringify(3.14159)
-// '3.14159\n'
-
-YAML.stringify([true, false, 'maybe', null])
-// `- true
-// - false
-// - maybe
-// - null
-// `
-
-YAML.stringify({ number: 3, plain: 'string', block: 'two\nlines\n' })
-// `number: 3
-// plain: string
-// block: |
-//   two
-//   lines
-// `
-```
-
----
-
-Browser testing provided by:
-
-<a href="https://www.browserstack.com/open-source">
-<img width=200 src="https://eemeli.org/yaml/images/browserstack.svg" alt="BrowserStack" />
-</a>
+For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
